@@ -1,190 +1,615 @@
 /*
-Theme Name: Starter Theme with Elementor
-Theme URI: https://itanvir.net/starter-theme/
-Author: iTanvir
-Author URI: https://itanvir.net/
-Version: 1.0
-Tested up to: 5.9
-Requires PHP: 5.6
-License: GNU General Public License v3 or later.
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: starter-theme
-Description: This is WordPress Starter Theme for Elementor page builder.
-Tags: flexible-header, custom-colors, custom-menu, custom-logo, featured-images
+	Theme Name: Starter Elementor Theme
+	Theme URI: https://itanvir.net/starter-elementor-theme/
+	Author: iTanvir
+	Author URI: https://itanvir.net/
+	Version: 1.0.0
+	Stable tag: 1.0.0
+	Requires at least: 5.0
+	Tested up to: 6.0.3
+	Requires PHP: 5.6
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: starter-theme
+	Description: A plain-vanilla & lightweight theme for Elementor page builder.
+	Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, threaded-comments, translation-ready,
 */
+/**
+ * DO NOT CHANGE THIS FILE!
+ * To override any of the settings in this section, add your styling code in the custom directory.
+ * Loading first in the style.scss & classic-editor.scss
+ */
 
 /* ================================================= 
 Default CSS
 ============================================================================*/
+
 /* Box sizing rules */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
 
-/* Remove default padding */
-ul[class],
-ol[class] {
-	padding: 0;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-	list-style: none;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-	margin: 0;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-a:hover,
-.btn {
-	text-decoration: none;
-}
-a:focus {
-	outline: 0 solid;
-	text-decoration: none;
-}
-
-input:focus,
-button:focus,
-textarea:focus,
-a:focus,
-.btn {
-	outline: none;
-}
-.btn:focus {
-	box-shadow: 0 0 0 0;
-}
-
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-	margin-top: 1em;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-}
-
-/* ================================================= 
-Global CSS
-============================================================================*/
-
-/* Set core body defaults */
+/* Sections */
 body {
-	min-height: 100vh;
-	scroll-behavior: smooth;
-	text-rendering: optimizeSpeed;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.5;
-	font-family: "Oswald", sans-serif;
+	color: #333333;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: var(--heading-font);
-	font-weight: 700;
-	color: var(--heading-color);
-	margin: 0 0 15px;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.2;
+	color: inherit;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
 }
 
 p {
-	margin-bottom: 15px;
-}
-p:last-child {
-	margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0.9rem;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
+/* Grouping content
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
 }
 
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+	white-space: pre-wrap;
+}
+
+/* Text-level semantics */
 a {
-	color: var(--body-color);
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
+	background-color: transparent;
+	text-decoration: none;
+	color: #cc3366;
 }
-a:hover {
-	color: var(--hover-color);
+a:hover,
+a:active {
+	color: #333366;
+}
+a:not([href]):not([tabindex]) {
+	color: inherit;
+	text-decoration: none;
+}
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+	color: inherit;
+	text-decoration: none;
+}
+a:not([href]):not([tabindex]):focus {
+	outline: 0;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+	height: auto;
+	max-width: 100%;
+}
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+figcaption {
+	font-size: 16px;
+	color: #333333;
+	line-height: 1.4;
+	font-style: italic;
+	font-weight: 400;
+}
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Print */
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		page-break-inside: avoid;
+		border: 1px solid #cccccc;
+	}
+	thead {
+		display: table-header-group;
+	}
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
+
+/**
+ * Form styling
+ * DO NOT CHANGE THIS FILE!
+ * To override any of the settings in this section, add your styling code in the custom directory.
+ */
+label {
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
 button,
-textarea,
-select {
-	font: inherit;
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0;
 }
 
 input[type="text"],
+input[type="date"],
 input[type="email"],
-input[type="tel"],
+input[type="number"],
 input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+select,
 textarea {
-	border: 1px solid #ddd;
-	padding: 10px;
+	width: 100%;
+	border: solid 1px #666666;
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+	border-color: #333333;
 }
 
-.alignleft {
-	float: left;
-	margin-right: 15px;
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
 }
-.alignright {
-	float: right;
-	margin-left: 15px;
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
 }
-.aligncenter {
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	width: auto;
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+button,
+[type="submit"],
+[type="button"] {
+	display: inline-block;
+	font-weight: 400;
+	color: #cc3366;
+	text-align: center;
+	white-space: nowrap;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid #cc3366;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	border-radius: 3px;
+	transition: all 0.3s;
+}
+button:focus,
+[type="submit"]:focus,
+[type="button"]:focus {
+	outline: 5px auto -webkit-focus-ring-color;
+}
+button:hover,
+button:focus,
+[type="submit"]:hover,
+[type="submit"]:focus,
+[type="button"]:hover,
+[type="button"]:focus {
+	color: #ffffff;
+	background-color: #cc3366;
+	text-decoration: none;
+}
+button:not(:disabled),
+[type="submit"]:not(:disabled),
+[type="button"]:not(:disabled) {
+	cursor: pointer;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+select {
 	display: block;
-	margin: 0 auto 15px;
 }
 
-/* ================================================= 
-Responsive CSS
-============================================================================*/
+/**
+ * Table styling
+ * DO NOT CHANGE THIS FILE!
+ * To override any of the settings in this section, add your styling code in the custom directory.
+ */
+table {
+	background-color: transparent;
+	width: 100%;
+	margin-bottom: 15px;
+	font-size: 0.9em;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table th,
+table td {
+	padding: 15px;
+	line-height: 1.5;
+	vertical-align: top;
+	border: 1px solid #80808080;
+}
+table th {
+	font-weight: bold;
+}
+table thead th,
+table tfoot th {
+	font-size: 1em;
+}
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 1px solid #80808080;
+}
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+	background-color: #80808012;
+}
+table tbody tr:hover > td,
+table tbody tr:hover > th {
+	background-color: #8080801a;
+}
+table tbody + tbody {
+	border-top: 2px solid #80808080;
+}
+@media (max-width: 767px) {
+	table table {
+		font-size: 0.8em;
+	}
+	table table th,
+	table table td {
+		padding: 7px;
+		line-height: 1.3;
+	}
+	table table th {
+		font-weight: 400;
+	}
+}
 
-/* Medium Layout: 1280px. */
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-}
-/* Tablet & mobile Layout: 768px. */
-@media only screen and (max-width: 991px) {
-}
-
-/* Tablet Layout: 768px. */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-}
-/* Mobile Layout: 320px. */
-@media only screen and (max-width: 767px) {
-}
-/* Wide Mobile Layout: 480px. */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+/**
+ * List styling
+ * DO NOT CHANGE THIS FILE!
+ * To override any of the settings in this section, add your styling code in the custom directory.
+ */
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+	margin-top: 0;
+	margin-bottom: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }

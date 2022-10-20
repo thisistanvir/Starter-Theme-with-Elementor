@@ -1,65 +1,34 @@
 <?php
 
 /**
- * The template for displaying header.
+ * The template for displaying the header
  *
- * @package Starter-theme
+ * This is the template that displays all of the <head> section, opens the <body> tag and adds the site's header.
+ *
+ * @package Starter-Theme
  */
 
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 ?>
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-t-fit=no">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-
-    <?php wp_head(); ?>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <?php $viewport_content = apply_filters('starter_theme_viewport_content', 'width=device-width, initial-scale=1'); ?>
+  <meta name="viewport" content="<?php echo esc_attr($viewport_content); ?>">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <?php
-    $site_name = get_bloginfo('name');
-    $tagline   = get_bloginfo('description', 'display');
-    $header_nav_menu = wp_nav_menu([
-        'theme_location' => 'main-menu',
-        'fallback_cb' => false,
-        'echo' => false,
-    ]);
-    ?>
 
-    <header id="site-header" class="site-header" role="banner">
+  <?php starter_theme_body_open(); ?>
 
-        <div class="site-branding">
-            <?php
-            if (has_custom_logo()) {
-                the_custom_logo();
-            } elseif ($site_name) {
-            ?>
-                <h1 class="site-title">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php esc_attr_e('Home', 'starter-theme'); ?>" rel="home">
-                        <?php echo esc_html($site_name); ?>
-                    </a>
-                </h1>
-                <p class="site-description">
-                    <?php
-                    if ($tagline) {
-                        echo esc_html($tagline);
-                    }
-                    ?>
-                </p>
-            <?php } ?>
-        </div>
-
-        <?php if ($header_nav_menu) : ?>
-            <nav class="site-navigation" role="navigation">
-                <?php echo $header_nav_menu; ?>
-            </nav>
-        <?php endif; ?>
-    </header>
+  <?php
+  if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_location('header')) {
+    get_template_part('./template-parts/header');
+  }
+  ?>

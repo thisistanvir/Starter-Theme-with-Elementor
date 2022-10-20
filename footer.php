@@ -5,29 +5,20 @@
  *
  * Contains the body & html closing tags.
  *
- * @package Starter-theme
+ * @package Starter-Theme
  */
+
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 
-
-$footer_nav_menu = wp_nav_menu([
-    'theme_location' => 'footer-menu',
-    'fallback_cb' => false,
-    'echo' => false,
-]);
+if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_location('footer')) {
+  get_template_part('./template-parts/footer');
+}
 ?>
-<footer id="site-footer" class="site-footer" role="contentinfo">
-    <?php if ($footer_nav_menu) : ?>
-        <nav class="site-navigation" role="navigation">
-            <?php echo $footer_nav_menu; ?>
-        </nav>
-    <?php endif; ?>
-</footer>
-
 
 <?php wp_footer(); ?>
+
 </body>
 
 </html>
