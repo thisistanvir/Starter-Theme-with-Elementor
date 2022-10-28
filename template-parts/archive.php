@@ -15,8 +15,12 @@ if (!defined('ABSPATH')) {
   <?php if (apply_filters('starter_theme_page_title', true)) : ?>
     <header class="page-header">
       <?php
-      the_archive_title('<h1 class="entry-title">', '</h1>');
-      the_archive_description('<p class="archive-description">', '</p>');
+      if (is_home() && !is_front_page()) {
+        single_post_title('<h1 class="entry-title">', '</h1>');
+      } else {
+        the_archive_title('<h1 class="entry-title">', '</h1>');
+        the_archive_description('<p class="archive-description">', '</p>');
+      }
       ?>
     </header>
   <?php endif; ?>
