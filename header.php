@@ -27,6 +27,9 @@ if (!defined('ABSPATH')) {
 
   <?php starter_theme_body_open(); ?>
 
+  <a class="skip-link screen-reader-text" href="#content">
+    <?php esc_html_e('Skip to content', 'starter-theme'); ?></a>
+
   <?php
   if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_location('header')) {
     get_template_part('./template-parts/header');
