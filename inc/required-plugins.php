@@ -23,6 +23,11 @@ function starter_theme_required_plugins() {
       'required'  => true,
     ),
     array(
+      'name'     =>  esc_html__('Kirki Customizer Framework', 'dustrilox'),
+      'slug'     => 'kirki',
+      'required' => false,
+    ),
+    array(
       'name'      => 'One Click Demo Import',
       'slug'      => 'one-click-demo-import',
       'required'  => true,
