@@ -23,7 +23,7 @@ function starter_theme_required_plugins() {
       'required'  => true,
     ),
     array(
-      'name'     =>  esc_html__('Kirki Customizer Framework', 'dustrilox'),
+      'name'     =>  esc_html__('Kirki Customizer Framework', 'starter-theme'),
       'slug'     => 'kirki',
       'required' => false,
     ),

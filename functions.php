@@ -185,6 +185,13 @@ if (!function_exists('starter_theme_body_open')) {
  */
 include_once 'inc/allow-svg.php';
 
+/**
+ * initialize kirki customizer class.
+ */
+if (class_exists('kirki')) {
+    include_once 'inc/starter-theme-customizer.php';
+    include_once 'inc/class-starter-theme-kirki.php';
+}
 
 /**
  * Custom Elementor Widgets

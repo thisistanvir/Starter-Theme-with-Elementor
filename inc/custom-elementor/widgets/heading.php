@@ -376,7 +376,7 @@ class Addon_Widget extends Widget_Base {
         $this->start_controls_section(
             '_section_style_content',
             [
-                'label' => __('Title / Content', 'tocore'),
+                'label' => __('Title / Content', 'starter-theme'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -384,7 +384,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_responsive_control(
             'content_padding',
             [
-                'label' => __('Content Padding', 'tocore'),
+                'label' => __('Content Padding', 'starter-theme'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -409,7 +409,7 @@ class Addon_Widget extends Widget_Base {
             '_heading_title',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __('Title', 'tocore'),
+                'label' => __('Title', 'starter-theme'),
                 'separator' => 'before'
             ]
         );
@@ -417,7 +417,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_responsive_control(
             'title_spacing',
             [
-                'label' => __('Bottom Spacing', 'tocore'),
+                'label' => __('Bottom Spacing', 'starter-theme'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -429,7 +429,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __('Text Color', 'tocore'),
+                'label' => __('Text Color', 'starter-theme'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .st-el-title' => 'color: {{VALUE}}',
@@ -451,7 +451,7 @@ class Addon_Widget extends Widget_Base {
             '_heading_subtitle',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __('Subtitle', 'tocore'),
+                'label' => __('Subtitle', 'starter-theme'),
                 'separator' => 'before'
             ]
         );
@@ -459,7 +459,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_responsive_control(
             'subtitle_spacing',
             [
-                'label' => __('Bottom Spacing', 'tocore'),
+                'label' => __('Bottom Spacing', 'starter-theme'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -471,7 +471,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_control(
             'subtitle_color',
             [
-                'label' => __('Text Color', 'tocore'),
+                'label' => __('Text Color', 'starter-theme'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .st-el-subtitle' => 'color: {{VALUE}}',
@@ -493,7 +493,7 @@ class Addon_Widget extends Widget_Base {
             '_content_description',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __('Description', 'tocore'),
+                'label' => __('Description', 'starter-theme'),
                 'separator' => 'before'
             ]
         );
@@ -501,7 +501,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_responsive_control(
             'description_spacing',
             [
-                'label' => __('Bottom Spacing', 'tocore'),
+                'label' => __('Bottom Spacing', 'starter-theme'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -513,7 +513,7 @@ class Addon_Widget extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label' => __('Text Color', 'tocore'),
+                'label' => __('Text Color', 'starter-theme'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .st-el-content p' => 'color: {{VALUE}}',
